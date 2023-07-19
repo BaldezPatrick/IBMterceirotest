@@ -37,8 +37,7 @@ You can use cURL to interact with the API directly from your terminal. Follow th
 #### Create candidate
 
 ```
-    curl 
-    --location --request POST 'http://localhost:8080/api/v1/hiring/start' \
+    curl --location --request POST 'http://localhost:8080/api/v1/hiring/start' \
     --header 'Content-Type: application/json' \
     --data-raw '{
     "nome": "Some name"
@@ -48,24 +47,36 @@ You can use cURL to interact with the API directly from your terminal. Follow th
 #### Schedule interview
 
 ```
-  curl --location --request POST 'http://localhost:8080/api/v1/hiring/schedule?codCandidato=1'
+   curl --location --request POST 'http://localhost:8080/api/v1/hiring/schedule' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+    "codCandidato": 1
+    }'
 ```
 #### Disqualify Candidate
 
 ```
-    curl --location --request POST 'http://localhost:8080/api/v1/hiring/di`qualify?codCandidato=1'
+    curl --location --request POST 'http://localhost:8080/api/v1/hiring/disqualify' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+    "codCandidato": 1
+    }'
 ```
 
 #### Get candidate status
 
 ```
-    curl --location --request GET 'http://localhost:8080/api/v1/hiring/status/1'
+   curl --location --request GET 'http://localhost:8080/api/v1/hiring/status/candidate/1'
 ```
 
 #### Approve candidate
 
 ```
-    curl --location --request POST 'http://localhost:8080/api/v1/hiring/approve?codCandidato=1'
+    curl --location --request POST 'http://localhost:8080/api/v1/hiring/approve' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+    "codCandidato": 1
+    }'
 ```
 
 #### Get approved candidates 

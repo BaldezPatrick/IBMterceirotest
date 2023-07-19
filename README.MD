@@ -62,13 +62,13 @@ You can use cURL to interact with the API directly from your terminal. Follow th
     curl --location --request GET 'http://localhost:8080/api/v1/hiring/status/1'
 ```
 
-### Approve candidate
+#### Approve candidate
 
 ```
     curl --location --request POST 'http://localhost:8080/api/v1/hiring/approve?codCandidato=1'
 ```
 
-### Get approved candidates 
+#### Get approved candidates 
 
 ```
     curl --location --request GET 'http://localhost:8080/api/v1/hiring/approved'
